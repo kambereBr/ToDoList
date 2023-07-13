@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary-color: #ced9da;
+$secondary-color: #f4f4f4;
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+$font: 'Roboto', sans-serif;
+$gray-color: #545862;
+$gray-footer-color: #f1f2f5;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+a,
+.item-description,
+.todo-title {
+  font-family: $font;
+}
+
+.container {
+  background-color: white;
+  box-shadow: $box-shadow;
+  text-align: center;
+  width: 40%;
+}
+
+.list-header-container {
+  padding-top: 10px;
+}
+
+.todo-title {
+  font-size: 1.3rem;
+  color: $gray-color;
+  font-weight: bold;
+}
+
+.refresh-img-class,
+.enter-img-class,
+.more-img-class {
+  width: 20px;
+  height: 20px;
+}
+
+.refresh-img-class:hover {
+  cursor: pointer;
+  transform: scale(1.1) rotate(20deg);
+}
+
+.more-img-class:hover {
+  cursor: grab;
+}
+
+ul {
+  width: 100%;
+  padding: 0;
+  margin-bottom: -9px;
+}
+
+li {
+  list-style: none;
+}
+
+.list-title,
+.todo-create {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.add-field {
+  width: 95%;
+  border: none;
+  outline: none;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.checkbox-container {
+  display: flex;
+}
+
+.checkbox-bbtn-class {
+  margin-right: 15px;
+}
+
+.footer-container {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-footer-color;
+}
+
+a {
+  text-decoration: none;
+  color: $gray-color;
+  font-weight: bold;
+}
+
+.clear-btn:hover {
+  color: red;
+}
+
+hr {
+  border: none;
+  background: rgb(231, 230, 230);
+  height: 1px;
+}
