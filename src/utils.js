@@ -32,6 +32,20 @@ const deleteTask = (tasks, taskIndex) => {
   updateLocalStorage(tasks);
 };
 
+const filterTask = (tasks) => tasks.completed === false;
+
+const clearAllCompleted = (tasks) => {
+  if (tasks.length === 1) {
+    tasks = [];
+  } else {
+    tasks = tasks.filter(filterTask);
+    for (let i = 0; i < tasks.length; i += 1) {
+      tasks[i].index = i + 1;
+    }
+  }
+  updateLocalStorage(tasks);
+};
+
 const editTaskDescription = (tasks, taskIndex, description) => {
   tasks[taskIndex - 1].description = description;
   updateLocalStorage(tasks);
@@ -48,4 +62,5 @@ export {
   editTaskDescription,
   editTastkStatus,
   localData,
+  clearAllCompleted,
 };

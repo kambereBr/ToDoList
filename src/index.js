@@ -9,6 +9,7 @@ import {
   editTaskDescription,
   localData,
   editTastkStatus,
+  clearAllCompleted,
 } from './utils.js';
 
 const imageRefresh = document.getElementById('refresh-img');
@@ -18,6 +19,7 @@ const imageEnter = document.getElementById('enter-img');
 imageEnter.src = iconEnter;
 
 const addField = document.getElementById('add-field');
+const clearBtn = document.getElementById('clear-all-btn');
 
 const listContainer = document.querySelector('.list-body-container');
 let myData = [];
@@ -126,6 +128,14 @@ addField.addEventListener('keypress', (event) => {
     event.preventDefault();
     addTask(myData, addField.value);
     addField.value = '';
+    renderList();
+  }
+});
+
+// clear all completed tasks
+clearBtn.addEventListener('click', () => {
+  if (window.confirm('Do you want to clear all completed tasks ?') === true) {
+    clearAllCompleted(myData);
     renderList();
   }
 });
