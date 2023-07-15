@@ -32,13 +32,22 @@ const deleteTask = (tasks, taskIndex) => {
   updateLocalStorage(tasks);
 };
 
-const editTaskDescription = (tasks, taskIndex, description) => {
-  tasks[taskIndex - 1].description = description;
+const filterTask = (tasks) => tasks.completed === false;
+
+const clearAllCompleted = (tasks) => {
+  if (tasks.length === 1) {
+    tasks = [];
+  } else {
+    tasks = tasks.filter(filterTask);
+    for (let i = 0; i < tasks.length; i += 1) {
+      tasks[i].index = i + 1;
+    }
+  }
   updateLocalStorage(tasks);
 };
 
-const editTastkStatus = (tasks, taskIndex, status) => {
-  tasks[taskIndex - 1].completed = status;
+const editTaskDescription = (tasks, taskIndex, description) => {
+  tasks[taskIndex - 1].description = description;
   updateLocalStorage(tasks);
 };
 
@@ -46,6 +55,7 @@ export {
   addTask,
   deleteTask,
   editTaskDescription,
-  editTastkStatus,
   localData,
+  clearAllCompleted,
+  updateLocalStorage,
 };
