@@ -8,9 +8,9 @@ import {
   deleteTask,
   editTaskDescription,
   localData,
-  editTastkStatus,
   clearAllCompleted,
 } from './utils.js';
+import editTastkStatus from './updateAction.js';
 
 const imageRefresh = document.getElementById('refresh-img');
 imageRefresh.src = iconRefresh;

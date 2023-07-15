@@ -51,16 +51,11 @@ const editTaskDescription = (tasks, taskIndex, description) => {
   updateLocalStorage(tasks);
 };
 
-const editTastkStatus = (tasks, taskIndex, status) => {
-  tasks[taskIndex - 1].completed = status;
-  updateLocalStorage(tasks);
-};
-
 export {
   addTask,
   deleteTask,
   editTaskDescription,
-  editTastkStatus,
   localData,
   clearAllCompleted,
+  updateLocalStorage,
 };
