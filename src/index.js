@@ -8,6 +8,7 @@ import {
   deleteTask,
   editTaskDescription,
   localData,
+  editTastkStatus,
 } from './utils.js';
 
 const imageRefresh = document.getElementById('refresh-img');
@@ -99,6 +100,11 @@ function renderList() {
           editTaskDescription(myData, inputDescript.id, inputDescript.value);
           renderList();
         }
+      });
+
+      inputCheck.addEventListener('change', () => {
+        const completed = !!inputCheck.checked;
+        editTastkStatus(myData, item.index, completed);
       });
 
       divChkBtn.appendChild(inputCheck);
